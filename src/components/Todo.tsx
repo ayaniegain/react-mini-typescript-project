@@ -8,10 +8,13 @@ interface Todo{
 
 function Todo():JSX.Element {
   const[task,setTask]=useState<string>("")
-  const [todo,setTodo]=useState<Todo[]>([])
+  let [todo,setTodo]=useState<Todo[]>([])
 
   const handleSubmit=(e:React.FormEvent<HTMLFormElement>): void=>{
     e.preventDefault()
+
+
+// console.log(newTask);
 
     let allTodo:Todo={id:Math.random(),task,complete:false}
     
@@ -33,7 +36,7 @@ function Todo():JSX.Element {
     <div className="h-screen flex content-center justify-center items-center bg-backgroundClr">
       <section className="h-[500px] w-[700px] bg-boxcolor rounded-lg">
         <form onSubmit={handleSubmit} className="flex content-center justify-center items-center my-20">
-          <input onChange={(e)=>setTask(e.target.value)} className="h-12 w-72 placeholder-black bg-backgroundClr mx-2" type="text" placeholder="New Todo"/>
+          <input required onChange={(e)=>setTask(e.target.value)} className="h-12 w-72 placeholder-black bg-backgroundClr mx-2" type="text" placeholder="New Todo"/>
           <button type="submit" className=" bg-slate-600 text-white px-4 py-2 rounded-full">Submit</button>
         </form>
         <div className="flex content-center justify-center items-center">
