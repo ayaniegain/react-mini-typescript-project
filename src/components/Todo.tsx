@@ -31,7 +31,6 @@ function Todo():JSX.Element {
   }
 
 
-  console.log(todo);
   return (
     <div className="h-screen flex content-center justify-center items-center bg-backgroundClr">
       <section className="h-[500px] w-[700px] bg-boxcolor rounded-lg">
@@ -50,11 +49,8 @@ function Todo():JSX.Element {
               <button className="bg-green-700 text-white px-3 py-1 rounded-full mx-2">Edit</button>
               <button onClick={()=>handleDelete(e.id)} className="bg-red-700 text-white px-3 py-1 rounded-full ">Delete</button>
               </section>
-              
             </li>)
             }
-           
-          
           </ul>
         </div>
       </section>
